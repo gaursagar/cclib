@@ -1616,6 +1616,55 @@ class Gaussian(logfileparser.Logfile):
         if line[1:7] == "ONIOM:":
             self.oniom = True
 
+        # Read in entire archive section, then extract Hessian if present
+        # The lower-triangular part of the Hessian is returned flattened.
+        # To convert to a 3N x 3N rank 2 matrix:
+        #   hessian = numpy.zeros([3N,3N]); hessian[numpy.tril_indices(3N)] = data.hessian
+        # The archive section is the only place the Hessian is found unless
+        #  additional print ("p") was specified in the Gaussian input file
+        # Under Windows, Gaussian uses "|" instead of "\" as separator
+        #  in archive section
+        if line[1:5] == "1|1|" or line[1:5] == "1\\1\\":
+            self.updateprogress(inputfile, "Archive Section", self.fupdate)            
+            arcsep = line[4];
+            arcstr = ""
+            # archive section is terminated by "||@", but just look for 
+            #  blank line following
+            while line.strip():
+                arcstr += line.strip()
+                line = inputfile.next()
+            # sections separated by "||"
+            arcsects = arcstr.split(arcsep + arcsep)
+            
+            # Section immediately preceeding Hessian ends with "NImag=<int>"
+            # Note that output file may contain multiple archive sections (e.g.,
+            #  for an opt + freq job, Hessian is in 2nd one).
+            for ii in range(len(arcsects)):
+                if arcsects[ii].find("NImag=") > -1:
+                    self.hessian = map(float, arcsects[ii+1].split(","))
+                       
+        # Atomic masses: In "Isotopes and Nuclear Properties:" section if
+        #  additional print ("p") is on, otherwise only present if freq job
+        #  (in Thermochemistry section).
+        # The "Isotopes and Nuclear Properties:" section may appear more than
+        #  once (e.g opt + freq job); this code will yield values from the final one
+        if line.find("Isotopes and Nuclear Properties") > -1:
+            self.atommasses = []
+        if line[1:8] == "AtmWgt=":
+            self.atommasses += map(float, line.split()[1:])
+        
+        # Get mass from Thermochemistry section if we haven't found it yet
+        # looking for "Atom  1 has atomic number x and mass y"; space 
+        #  between "Atom" and "1" is different in G03 and G09
+        if line.find("1 has atomic number") > -1 and not hasattr(self, "atommasses"):
+            self.atommasses = []
+            broken = line.split()
+            # no blank line following, so use len(split()) to detect end
+            while len(broken) == 9:
+                self.atommasses.append(float(broken[8]))
+                line = inputfile.next()
+                broken = line.split()
+
         # This will be printed only during BOMD calcs;
         if line.startswith(" INPUT DATA FOR L118"):
             self.BOMD = True
