@@ -204,8 +204,7 @@ class ccData(object):
             if k in self._intarrays:
                 precision = 'i'
             if v == numpy.ndarray:
-                a = getattr(self, k)
-                setattr(self, k, numpy.array(getattr(self, k), precision))
+                setattr(self, k, numpy.array(list(getattr(self, k)), precision))
             elif v == list and k in self._listsofarrays:
                 setattr(self, k, [numpy.array(x, precision) for x in getattr(self, k)])
             elif v == dict and k in self._dictsofarrays:
