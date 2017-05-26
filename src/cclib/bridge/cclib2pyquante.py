@@ -17,6 +17,12 @@ except ImportError:
     # Fail silently for now.
     pass
 
+try:
+    from pyquante2 import molecule
+except ImportError:
+    # Fail silently for now.
+    pass
+
 
 def makepyquante(atomcoords, atomnos, charge=0, mult=1):
     """Create a PyQuante Molecule.
@@ -32,6 +38,16 @@ def makepyquante(atomcoords, atomnos, charge=0, mult=1):
     """
     return Molecule("notitle", list(zip(atomnos, atomcoords)), units="Angstrom",
                     charge=charge, multiplicity=mult)
+
+def makepyquante2(atomcoords, atomnos, charge=0, mult=1):
+    """Create a pyquante2 Molecule.
+
+    atomcoords : numpy.ndarray of shape (m,3)
+    atomnos: numpy.ndarray of shape (m,)
+    Note: in cclib atomcoords have shape (n,m,3)
+    """
+    geom = [np.append(i[0], i[1]) for i in list(zip(atomnos, atomcoords))]
+    return molecule(geom, units="Angstrom", charge=charge, multiplicity=mult)
 
 
 if __name__ == "__main__":
