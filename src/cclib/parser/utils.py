@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2016, the cclib development team
+# Copyright (c) 2017, the cclib development team
 #
 # This file is part of cclib (http://cclib.github.io) and is distributed under
 # the terms of the BSD 3-Clause License.
@@ -10,6 +10,7 @@
 import sys
 import numpy
 
+from decimal import Decimal
 
 # Define for any Python version <= 3.3,
 # See https://github.com/kachayev/fn.py/commit/391824c43fb388e0eca94e568ff62cc35b543ecb
@@ -192,6 +193,67 @@ class WidthSplitter:
             while len(elements) and elements[-1] == '':
                 elements.pop()
         return elements
+
+
+class MoldenReformatter:
+    """Reformat Molden output files."""
+
+    def __init__(self, filestring):
+        self.filestring = filestring
+
+    def scinotation(self, num):
+        """Convert Molden style number formatting to scientific notation.
+        0.9910616900D+02 --> 9.910617e+01
+        """
+        num = num.replace('D', 'e')
+        return str('%.6e' % Decimal(num))
+
+    def reformat(self):
+        """Reformat Molden output file to:
+        - use scientific notation,
+        - split sp molecular orbitals to s and p, and
+        - replace multiple spaces with single."""
+        filelines = self.filestring.split("\n")
+        lines = []
+        # Flag to deterimine if the title section has been seen.
+        title = False
+        
+        for line in filelines:
+            line = line.replace('\n', '')
+            # Replace multiple spaces with single spaces.
+            line = ' '.join(line.split())
+
+            # Check for [Title] section.
+            if 'title' in line.lower():
+                lines.append(line)
+                # Add the next line to lines.
+                line = next(filelines).split()
+                line = ' '.join(line.split())
+                lines.append(line)
+                title = True
+
+            # Convert D notation to scientific notation.
+            if title and 'D' in line:
+                vals = line.split()
+                vals = [self.scinotation(i) for i in vals]
+                lines.append(' '.join(vals))
+
+            # Convert sp to s and p orbitals.
+            elif title and 'sp' in line:
+                n_prim = int(line.split()[1])
+                new_s = ['s ' + str(n_prim) + ' 1.00']
+                new_p = ['p ' + str(n_prim) + ' 1.00']
+                while n_prim > 0:
+                    n_prim -= 1
+                    line = next(filelines).split()
+                    new_s.append(self.scinotation(line[0]) + ' ' + self.scinotation(line[1]))
+                    new_p.append(self.scinotation(line[0]) + ' ' + self.scinotation(line[2]))
+                lines.extend(new_s)
+                lines.extend(new_p)
+            else:
+                lines.append(line)
+
+        return lines
 
 
 if __name__ == "__main__":
