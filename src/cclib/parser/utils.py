@@ -216,8 +216,8 @@ class MoldenReformatter:
         filelines = self.filestring.split("\n")
         lines = []
         # Flag to deterimine if the title section has been seen.
-        title = False
-        
+        # title = False
+
         for line in filelines:
             line = line.replace('\n', '')
             # Replace multiple spaces with single spaces.
@@ -225,21 +225,21 @@ class MoldenReformatter:
 
             # Check for [Title] section.
             if 'title' in line.lower():
-                lines.append(line)
-                # Add the next line to lines.
+                # lines.append(line)
+                # Skip the next line to lines.
                 line = next(filelines).split()
-                line = ' '.join(line.split())
-                lines.append(line)
-                title = True
+                # line = ' '.join(line.split())
+                # lines.append(line)
+                # title = True
 
             # Convert D notation to scientific notation.
-            if title and 'D' in line:
+            if 'D' in line:
                 vals = line.split()
                 vals = [self.scinotation(i) for i in vals]
                 lines.append(' '.join(vals))
 
             # Convert sp to s and p orbitals.
-            elif title and 'sp' in line:
+            elif 'sp' in line:
                 n_prim = int(line.split()[1])
                 new_s = ['s ' + str(n_prim) + ' 1.00']
                 new_p = ['p ' + str(n_prim) + ' 1.00']
