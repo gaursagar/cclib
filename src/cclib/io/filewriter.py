@@ -32,7 +32,7 @@ class Writer(object):
     """
 
     def __init__(self, ccdata, jobfilename=None, terse=False,
-                 *args, **kwargs):
+                 required_attrs=None, *args, **kwargs):
         """Initialize the Writer object.
 
         This should be called by a subclass in its own __init__ method.
@@ -46,6 +46,7 @@ class Writer(object):
         self.ccdata = ccdata
         self.jobfilename = jobfilename
         self.terse = terse
+        self.required_attrs = required_attrs
 
         self.pt = PeriodicTable()
 
@@ -55,6 +56,10 @@ class Writer(object):
             # Used for calculating SMILES/InChI, formula, MW, etc.
             self.obmol, self.pbmol = self._make_openbabel_from_ccdata()
             self.bond_connectivities = self._make_bond_connectivity_from_openbabel(self.obmol)
+
+        # Check if all required attributes are present in ccData.
+        if required_attrs:
+            self._check_required_attributes(self.required_attrs)
 
     def generate_repr(self):
         """Generate the written representation of the logfile data.
