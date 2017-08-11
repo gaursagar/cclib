@@ -1,0 +1,14 @@
+ $CONTRL SCFTYP=RHF MPLEVL=2
+         RUNTYP=ENERGY EXETYP=RUN
+         UNITS=ANGS AIMPAC=.t. $end
+ $MP2    MP2PRP=.T. $end
+ $BASIS  GBASIS=sto NGAUSS=3 $end
+ $DATA
+water
+C1
+ O  8   0.000000    0.000000    0.000000
+ H  1   0.990000    0.000000    0.000000
+ H  1  -0.272881    0.951649    0.000000
+ $END
+ 
+ 

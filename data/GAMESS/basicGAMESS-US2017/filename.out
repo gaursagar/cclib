@@ -1,0 +1,12 @@
+----- GAMESS execution script 'rungms' -----
+This job is running on host firzens
+under operating system Linux at Thu Aug 10 21:45:44 IST 2017
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem     1K-blocks      Used Available Use% Mounted on
+/dev/sda11     254243428 235001936   6303612  98% /
+GAMESS temporary binary files will be written to /scr/sagar
+GAMESS supplementary output files will be written to /home/sagar/gamess/scratch
+Copying input file filename.inp to your run's scratch directory...
+Input file filename.inp does not exist.
+This job expected the input file to be in directory /home/sagar/gamess/gamess/old
+Please fix your file name problem, and resubmit.
