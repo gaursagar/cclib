@@ -1,0 +1,411 @@
+                          Running on host firzens
+
+          ******************************************************
+          *      Firefly version 8.2.0, build number 10203     *
+          *   Compiled on    Monday,    19-09-2016, 15:30:23   *
+          *Code development and Intel/AMD specific optimization*
+          *  Copyright (c) 1994, 2016 by  Alex A. Granovsky,   *
+          *          Firefly Project, Moscow, Russia.          *
+          *   Some parts of this program include code due to   *
+          * work of Jim Kress, Peter Burger, and Robert Ponec. *
+          ******************************************************
+          *             Firefly Project homepage:              *
+          * http://classic.chem.msu.su/gran/firefly/index.html *
+          *                      e-mail:                       *
+          *               gran@classic.chem.msu.su             *
+          *This program is not a free software and is provided *
+          *exclusively to its registered users under the terms *
+          *       of Firefly package license agreement         *
+          * Unauthorized use of Firefly is strongly prohibited *
+          *   This program may not be redistributed without    *
+          * the specific, written permission of its developers.*
+          ******************************************************
+
+          ******************************************************
+          *  PARTIALLY BASED ON  US GAMESS VERSION 6 JUN 1999, *
+          *   US GAMESS VERSIONS  6 SEP 2001 AND 12 DEC 2003   *
+          *             FROM IOWA STATE UNIVERSITY             *
+          * M.W.SCHMIDT, K.K.BALDRIDGE, J.A.BOATZ, S.T.ELBERT, *
+          *   M.S.GORDON, J.H.JENSEN, S.KOSEKI, N.MATSUNAGA,   *
+          *          K.A.NGUYEN, S.J.SU, T.L.WINDUS,           *
+          *       TOGETHER WITH M.DUPUIS, J.A.MONTGOMERY       *
+          *         J.COMPUT.CHEM.  14, 1347-1363(1993)        *
+          ******************************************************
+
+
+ Core i7    / Linux  Firefly version running under Linux.
+ Running on Intel CPU:  Brand ID  0, Family  6, Model  69, Stepping  1
+ CPU Brand String    :  Intel(R) Core(TM) i5-4200U CPU @ 1.60GHz        
+ CPU Features        :  x87 FPU, CMOV, MMX, SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2, AVX, AVX2, FMA3, HTT, MWAIT, EM64T
+ Data cache size     :  L1 32 KB, L2  256 KB, L3  3072 KB
+ max    # of   cores/package :   8
+ max    # of threads/package :  16
+ max     cache sharing level :  16
+ actual # of   cores/package :   2
+ actual # of threads/package :   4
+ actual # of threads/core    :   2
+ Operating System successfully passed SSE support test.
+ Operating System supports AVX/FMA.
+
+
+ PARALLEL VERSION (MPICH) RUNNING IN SERIAL MODE USING SINGLE PROCESS
+
+ EXECUTION OF FIREFLY BEGUN 21:49:43 10-AUG-2017    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD> $contrl scftyp=rhf cityp=cis runtyp=energy exetyp=run                          
+ INPUT CARD>         units=angs coord=cart AIMPAC=1 $end                                    
+ INPUT CARD> $basis  gbasis=sto ngauss=3 $end                                               
+ INPUT CARD> $cis    hamtyp=saps nstate=5 $end                                              
+ INPUT CARD> $data                                                                          
+ INPUT CARD>water                                                                           
+ INPUT CARD>C1 1                                                                            
+ INPUT CARD> O  8   0.000000    0.000000    0.000000                                        
+ INPUT CARD> H  1   0.990000    0.000000    0.000000                                        
+ INPUT CARD> H  1  -0.272881    0.951649    0.000000                                        
+ INPUT CARD> $end                                                                           
+ INPUT CARD>                                                                                
+   20000000 WORDS OF MEMORY AVAILABLE
+
+ This job is executing on     1 unique host(s)
+ Minimum number of processes per host is:    1
+ Maximum number of processes per host is:    1
+
+ On master's host, detected    4 CPU core(s) in aggregate
+
+ Warning: running without fastdiag runtime extension!
+
+ Warning: HTT is enabled, bitmask of physically unique cores is 0x0000000A
+
+ SMT aware parts of program will use              2 threads.
+
+ Creating thread pool to serve up to            128 threads.
+
+ Activating Call64 option.
+
+ Using 64-bit DGEMM by default.
+
+
+ WARNING: COORD=CART FORCES EXETYP=CHECK
+
+
+ CHECK SHOWS $BASIS    GROUP SYNTAX IS OK
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=STO          IGAUSS=       3      POLAR=NONE    
+     NDFUNC=       0     NFFUNC=       0     DIFFSP=       F
+     NPFUNC=       0      DIFFS=       F
+
+
+     RUN TITLE
+     ---------
+ water                                                                           
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     1
+
+ THE MOMENTS OF INERTIA ARE (AMU-ANGSTROM**2)
+ IXX=       0.635   IYY=       1.260   IZZ=       1.895
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     0.0000000190        0.1260041840        0.0000000000
+ H           1.0    -1.4941104832       -0.9998885491        0.0000000000
+ H           1.0     1.4941101821       -0.9998887760        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    O              H              H         
+
+  1  O               0.0000000      0.9900000 *    0.9899999 *  
+  2  H               0.9900000 *    0.0000000      1.5812983 *  
+  3  H               0.9899999 *    1.5812983 *    0.0000000    
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+ SHELL TYPE PRIM    EXPONENT          CONTRACTION COEFFICIENTS
+
+ O         
+
+   1   S    1     130.709321    4.251943 (  0.154329) 
+   1   S    2      23.808866    4.112294 (  0.535328) 
+   1   S    3       6.443608    1.281623 (  0.444635) 
+
+   2   L    4       5.033151   -0.239413 ( -0.099967)     1.675450 (  0.155916) 
+   2   L    5       1.169596    0.320234 (  0.399513)     1.053568 (  0.607684) 
+   2   L    6       0.380389    0.241686 (  0.700115)     0.166903 (  0.391957) 
+
+ H         
+
+   3   S    7       3.425251    0.276934 (  0.154329) 
+   3   S    8       0.623914    0.267839 (  0.535328) 
+   3   S    9       0.168855    0.083474 (  0.444635) 
+
+ H         
+
+   4   S   10       3.425251    0.276934 (  0.154329) 
+   4   S   11       0.623914    0.267839 (  0.535328) 
+   4   S   12       0.168855    0.083474 (  0.444635) 
+
+ TOTAL NUMBER OF SHELLS              =    4
+ TOTAL NUMBER OF BASIS FUNCTIONS     =    7
+ NUMBER OF ELECTRONS                 =   10
+ CHARGE OF MOLECULE                  =    0
+ STATE MULTIPLICITY                  =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA) =    5
+ NUMBER OF OCCUPIED ORBITALS (BETA ) =    5
+ TOTAL NUMBER OF ATOMS               =    3
+ THE NUCLEAR REPULSION ENERGY IS        8.8870065747
+ CHECK SHOWS $MASS     GROUP INPUT IS NOT PRESENT
+ CHECK SHOWS $EFIELD   GROUP INPUT IS NOT PRESENT
+
+     $CONTRL OPTIONS
+     ---------------
+     SCFTYP=RHF          RUNTYP=ENERGY       EXETYP=CHECK   
+     MPLEVL=       0     LOCAL =NONE         UNITS =ANGS    
+     MULT  =       1     ICHARG=       0     MAXIT =      30
+     NPRINT=       7     IREST =       0     COORD =CART    
+     ECP   =NONE         NORMF =       0     NORMP =       0
+     ITOL  =      20     ICUT  =       9     NZVAR =       0
+     NOSYM =       0     INTTYP=POPLE        GEOM  =INPUT   
+     PLTORB=       F     MOLPLT=       F     RPAC  =       F
+     AIMPAC=       1     FRIEND=             CITYP =CIS     
+     DFTTYP=NONE    
+
+     $SYSTEM OPTIONS
+     ---------------
+     KDIAG =       0     MEMORY= 20000000     TIMLIM=   172800.0 SEC.
+     COREFL=       F     PTIME =        F     XDR   =       F
+     BALTYP=LOOP         CBASE = EFD51000     FBASE = 00000000
+ CHECK SHOWS $SCRF     GROUP INPUT IS NOT PRESENT
+ CHECK SHOWS $PCM      GROUP INPUT IS NOT PRESENT
+ CHECK SHOWS $GRID     GROUP INPUT IS NOT PRESENT
+ CHECK SHOWS $PDC      GROUP INPUT IS NOT PRESENT
+ CHECK SHOWS $CUBE     GROUP INPUT IS NOT PRESENT
+ CHECK SHOWS $ELDENS   GROUP INPUT IS NOT PRESENT
+ CHECK SHOWS $ELFLDG   GROUP INPUT IS NOT PRESENT
+ CHECK SHOWS $ELMOM    GROUP INPUT IS NOT PRESENT
+ CHECK SHOWS $ELPOT    GROUP INPUT IS NOT PRESENT
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+
+ CHECK SHOWS $PPA      GROUP INPUT IS NOT PRESENT
+ CHECK SHOWS $NUMINT   GROUP INPUT IS NOT PRESENT
+ CHECK SHOWS $RADINT   GROUP INPUT IS NOT PRESENT
+ CHECK SHOWS $SCF      GROUP INPUT IS NOT PRESENT
+          EXTRAPOLATION IN EFFECT
+ CHECK SHOWS $SCFMI    GROUP INPUT IS NOT PRESENT
+ CHECK SHOWS $INTGRL   GROUP INPUT IS NOT PRESENT
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       T
+
+ ATTENTION! AO INTEGRALS WILL BE PACKED.
+ THRESHOLD FOR PACKING PKTHR =  0.10000000D-01
+ CHECK SHOWS $TRANS    GROUP INPUT IS NOT PRESENT
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =       0     CUTTRF = 1.0E-09
+     MPTRAN =       0     DIRTRF =       F
+     AOINTS =DUP          IREST  =       0
+ CHECK SHOWS $CIS      GROUP SYNTAX IS OK
+
+     ------------------------------
+     CI-SINGLES CONTROL INFORMATION
+     ------------------------------
+     NACORE =        1  NBCORE   =        1
+     NSTATE =        8  ISTATE   =        1
+     HAMTYP = SAPS      SAP MULT =        1
+     DIAGZN = FULL      MXVEC    =        8
+     NDAVIT =       50  DAVCVG   = 1.00E-05
+     CISPRP =        F  NGSVEC   =        8
+     MNMEDG =        F  MNMEOP   =        F
+     CHFSLV = CONJG     RDCISV   =        F
+     DGAPRX =        T  ISTSYM   =        0
+
+     NUMBER OF CORE -A-  ORBITALS =     1
+     NUMBER OF CORE -B-  ORBITALS =     1
+     NUMBER OF OCC. -A-  ORBITALS =     5
+     NUMBER OF OCC. -B-  ORBITALS =     5
+     NUMBER OF MOLECULAR ORBITALS =     7
+     NUMBER OF   BASIS  FUNCTIONS =     7
+
+
+     ------------------------------------------
+     THE POINT GROUP IS C1 , NAXIS= 1, ORDER= 1
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   =   7
+
+ ..... DONE SETTING UP THE RUN .....
+
+ CPU        TIME:   STEP =      0.08 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.06 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =    123.54%,  TOTAL =     185.32%
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     184.52%
+ CHECK SHOWS $GUESS    GROUP INPUT IS NOT PRESENT
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          SYMDEN=       F
+          TOLZ  = 0.0E+00          TOLE  = 0.0E+00
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+ HUCKEL GUESS REQUIRES      2471 WORDS.
+
+ THIS CHECK RUN SHOWS THERE IS SUFFICIENT MEMORY FOR GUESS=HUCKEL.
+
+ SINCE THIS IS A CHECK RUN WITH BOTH GUESS=HUCKEL AND PRTMO=.FALSE.,
+ THE ORBITALS WILL BE MADE BY GUESS=HCORE, IN THE INTEREST OF SPEED.
+ IF YOU REALLY NEED TO SEE THE HUCKEL ORBITAL SYMMETRIES,
+ YOU MUST SET PRTMO=.TRUE. DURING A CHECK RUN.
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  7.14144475E-01
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+     5 ORBITALS ARE OCCUPIED (    1 CORE ORBITALS).
+     2=A        3=A        4=A        5=A        6=A        7=A   
+ ...... END OF INITIAL ORBITAL SELECTION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     179.66%
+
+          --------------------
+          2 ELECTRON INTEGRALS
+          --------------------
+
+ THE -PK- OPTION IS OFF, THE INTEGRALS ARE NOT IN SUPERMATRIX FORM.
+ STORING    4998 INTEGRALS/RECORD ON DISK, USING 12 BYTES/INTEGRAL.
+ TWO ELECTRON INTEGRAL EVALUATION REQUIRES   34408 WORDS OF MEMORY.
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     179.31%
+
+          -------------------
+          RHF SCF CALCULATION
+          -------------------
+
+     NUCLEAR ENERGY =         8.8870065747
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF STEP=      7938 WORDS.
+ ...... END OF RHF CALCULATION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     179.01%
+
+
+                         ------------------------------
+                         properties for the RHF density
+                         ------------------------------
+
+          ---------------------------------------
+          MULLIKEN AND LOWDIN POPULATION ANALYSES
+          ---------------------------------------
+ ...... END OF PROPERTY EVALUATION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     178.74%
+ ......END OF NBO ANALYSIS......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     176.61%
+
+ NSTATE IS EQUAL TO THE NUMBER OF CIS   CONFIGURATIONS
+ SETTING MXVEC = NCFG
+
+
+          ---------------------------------------------
+             ATOMIC ORBITAL BASIS CI-SINGLES ENERGY
+             PROGRAM WRITTEN BY SIMON P. WEBB
+          ---------------------------------------------
+
+ # CORE ORBITALS      =    1
+ # OCCUPIED ORBITALS  =    4
+ # MOLECULAR ORBITALS =    7
+ # BASIS FUNCTIONS    =    7
+
+ NUMBER OF CIS   SPIN-ADAPTED ANTISYMMETRIZED PRODUCTS (SAPS) IS       8
+
+ APPROXIMATING CIS HAMILTONIAN DIAGONAL ELEMENTS USING ONLY ORBITAL ENERGIES
+
+ -CIS- HAM. DIAGONAL ELEMENTS  TOOK      0.000 SECONDS
+
+ MIN MEMORY REQ. FOR CIS   ENERGY FOCK-LIKE BUILDS =       101 WORDS
+ MEMORY REQ. FOR SINGLE BATCH BUILDS               =       787 WORDS
+ MEMORY AVAILABLE                                  =  19988915 WORDS
+
+ SINGLE BATCH ENERGY CALCULATION WILL BE PERFORMED
+
+ ..... DONE WITH CIS ENERGY .....
+
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     175.69%
+
+     -----------------------------------------------------------
+     CIS PROPERTIES...FOR THE WAVEFUNCTION OF EXCITED STATE    1
+                (USING THE EXPECTATION VALUE DENSITY)
+     -----------------------------------------------------------
+
+
+                         -----------------------------
+                         properties for the CI density
+                         -----------------------------
+
+          ---------------------------------------
+          MULLIKEN AND LOWDIN POPULATION ANALYSES
+          ---------------------------------------
+ ...... END OF PROPERTY EVALUATION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     175.29%
+ ......END OF NBO ANALYSIS......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     174.71%
+      396849 WORDS OF    DYNAMIC MEMORY USED
+      105655 BYTES OF    HEAP MEMORY    USED,       97527 BYTES REMAIN IN USE
+ EXECUTION OF FIREFLY TERMINATED NORMALLY 21:49:43 10-AUG-2017    

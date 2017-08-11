@@ -1,0 +1,645 @@
+                          Running on host firzens
+
+          ******************************************************
+          *      Firefly version 8.2.0, build number 10203     *
+          *   Compiled on    Monday,    19-09-2016, 15:30:23   *
+          *Code development and Intel/AMD specific optimization*
+          *  Copyright (c) 1994, 2016 by  Alex A. Granovsky,   *
+          *          Firefly Project, Moscow, Russia.          *
+          *   Some parts of this program include code due to   *
+          * work of Jim Kress, Peter Burger, and Robert Ponec. *
+          ******************************************************
+          *             Firefly Project homepage:              *
+          * http://classic.chem.msu.su/gran/firefly/index.html *
+          *                      e-mail:                       *
+          *               gran@classic.chem.msu.su             *
+          *This program is not a free software and is provided *
+          *exclusively to its registered users under the terms *
+          *       of Firefly package license agreement         *
+          * Unauthorized use of Firefly is strongly prohibited *
+          *   This program may not be redistributed without    *
+          * the specific, written permission of its developers.*
+          ******************************************************
+
+          ******************************************************
+          *  PARTIALLY BASED ON  US GAMESS VERSION 6 JUN 1999, *
+          *   US GAMESS VERSIONS  6 SEP 2001 AND 12 DEC 2003   *
+          *             FROM IOWA STATE UNIVERSITY             *
+          * M.W.SCHMIDT, K.K.BALDRIDGE, J.A.BOATZ, S.T.ELBERT, *
+          *   M.S.GORDON, J.H.JENSEN, S.KOSEKI, N.MATSUNAGA,   *
+          *          K.A.NGUYEN, S.J.SU, T.L.WINDUS,           *
+          *       TOGETHER WITH M.DUPUIS, J.A.MONTGOMERY       *
+          *         J.COMPUT.CHEM.  14, 1347-1363(1993)        *
+          ******************************************************
+
+
+ Core i7    / Linux  Firefly version running under Linux.
+ Running on Intel CPU:  Brand ID  0, Family  6, Model  69, Stepping  1
+ CPU Brand String    :  Intel(R) Core(TM) i5-4200U CPU @ 1.60GHz        
+ CPU Features        :  x87 FPU, CMOV, MMX, SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2, AVX, AVX2, FMA3, HTT, MWAIT, EM64T
+ Data cache size     :  L1 32 KB, L2  256 KB, L3  3072 KB
+ max    # of   cores/package :   8
+ max    # of threads/package :  16
+ max     cache sharing level :  16
+ actual # of   cores/package :   2
+ actual # of threads/package :   4
+ actual # of threads/core    :   2
+ Operating System successfully passed SSE support test.
+ Operating System supports AVX/FMA.
+
+
+ PARALLEL VERSION (MPICH) RUNNING IN SERIAL MODE USING SINGLE PROCESS
+
+ EXECUTION OF FIREFLY BEGUN 21:49:43 10-AUG-2017    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD> $CONTRL SCFTYP=RHF MPLEVL=2                                                    
+ INPUT CARD>         RUNTYP=ENERGY EXETYP=RUN                                               
+ INPUT CARD>         UNITS=ANGS AIMPAC=1 $end                                               
+ INPUT CARD> $MP2    MP2PRP=.T. $end                                                        
+ INPUT CARD> $BASIS  GBASIS=sto NGAUSS=3 $end                                               
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>water                                                                           
+ INPUT CARD>C1 1                                                                            
+ INPUT CARD> O  8   0.000000    0.000000    0.000000                                        
+ INPUT CARD> H  1   0.990000    0.000000    0.000000                                        
+ INPUT CARD> H  1  -0.272881    0.951649    0.000000                                        
+ INPUT CARD> $END                                                                           
+ INPUT CARD>                                                                                
+ INPUT CARD>                                                                                
+   20000000 WORDS OF MEMORY AVAILABLE
+
+ This job is executing on     1 unique host(s)
+ Minimum number of processes per host is:    1
+ Maximum number of processes per host is:    1
+
+ On master's host, detected    4 CPU core(s) in aggregate
+
+ Warning: running without fastdiag runtime extension!
+
+ Warning: HTT is enabled, bitmask of physically unique cores is 0x0000000A
+
+ SMT aware parts of program will use              2 threads.
+
+ Creating thread pool to serve up to            128 threads.
+
+ Activating Call64 option.
+
+ Using 64-bit DGEMM by default.
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=STO          IGAUSS=       3      POLAR=NONE    
+     NDFUNC=       0     NFFUNC=       0     DIFFSP=       F
+     NPFUNC=       0      DIFFS=       F
+
+
+     RUN TITLE
+     ---------
+ water                                                                           
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     1
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     0.0000000000        0.0000000000        0.0000000000
+ H           1.0     1.8708288642        0.0000000000        0.0000000000
+ H           1.0    -0.5156703548        1.7983559776        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    O              H              H         
+
+  1  O               0.0000000      0.9900000 *    0.9899999 *  
+  2  H               0.9900000 *    0.0000000      1.5812983 *  
+  3  H               0.9899999 *    1.5812983 *    0.0000000    
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+ SHELL TYPE PRIM    EXPONENT          CONTRACTION COEFFICIENTS
+
+ O         
+
+   1   S    1     130.709321    4.251943 (  0.154329) 
+   1   S    2      23.808866    4.112294 (  0.535328) 
+   1   S    3       6.443608    1.281623 (  0.444635) 
+
+   2   L    4       5.033151   -0.239413 ( -0.099967)     1.675450 (  0.155916) 
+   2   L    5       1.169596    0.320234 (  0.399513)     1.053568 (  0.607684) 
+   2   L    6       0.380389    0.241686 (  0.700115)     0.166903 (  0.391957) 
+
+ H         
+
+   3   S    7       3.425251    0.276934 (  0.154329) 
+   3   S    8       0.623914    0.267839 (  0.535328) 
+   3   S    9       0.168855    0.083474 (  0.444635) 
+
+ H         
+
+   4   S   10       3.425251    0.276934 (  0.154329) 
+   4   S   11       0.623914    0.267839 (  0.535328) 
+   4   S   12       0.168855    0.083474 (  0.444635) 
+
+ TOTAL NUMBER OF SHELLS              =    4
+ TOTAL NUMBER OF BASIS FUNCTIONS     =    7
+ NUMBER OF ELECTRONS                 =   10
+ CHARGE OF MOLECULE                  =    0
+ STATE MULTIPLICITY                  =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA) =    5
+ NUMBER OF OCCUPIED ORBITALS (BETA ) =    5
+ TOTAL NUMBER OF ATOMS               =    3
+ THE NUCLEAR REPULSION ENERGY IS        8.8870065747
+
+     $CONTRL OPTIONS
+     ---------------
+     SCFTYP=RHF          RUNTYP=ENERGY       EXETYP=RUN     
+     MPLEVL=       2     LOCAL =NONE         UNITS =ANGS    
+     MULT  =       1     ICHARG=       0     MAXIT =      30
+     NPRINT=       7     IREST =       0     COORD =UNIQUE  
+     ECP   =NONE         NORMF =       0     NORMP =       0
+     ITOL  =      20     ICUT  =       9     NZVAR =       0
+     NOSYM =       0     INTTYP=POPLE        GEOM  =INPUT   
+     PLTORB=       F     MOLPLT=       F     RPAC  =       F
+     AIMPAC=       1     FRIEND=             CITYP =NONE    
+     DFTTYP=NONE    
+
+     $SYSTEM OPTIONS
+     ---------------
+     KDIAG =       0     MEMORY= 20000000     TIMLIM=   172800.0 SEC.
+     COREFL=       F     PTIME =        F     XDR   =       F
+     BALTYP=LOOP         CBASE = EFD31000     FBASE = 00000000
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+
+          EXTRAPOLATION IN EFFECT
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       T
+
+ ATTENTION! AO INTEGRALS WILL BE PACKED.
+ THRESHOLD FOR PACKING PKTHR =  0.10000000D-01
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =       0     CUTTRF = 1.0E-09
+     MPTRAN =       0     DIRTRF =       F
+     AOINTS =DUP          IREST  =       0
+
+          -----------------------
+          MP2 CONTROL INFORMATION
+          -----------------------
+          NCORE  =        1  CUTOFF = 1.00E-09
+          LMOMP2 =        F  AOINTS = DUP     
+          METHOD =        2  NWORD  =          0
+          MP2PRP =        T  DIRECT =          F
+          PACKAO =        T  MNRECL =      20000
+          SPARSE =     AUTO  OSPT   = NONE    
+          SCS(S) =        1.0000000000000000E+00
+          SCS(T) =        1.0000000000000000E+00
+
+          NUMBER OF CORE      ORBITALS =     1
+          NUMBER OF OCC. -A-  ORBITALS =     5
+          NUMBER OF OCC. -B-  ORBITALS =     5
+          NUMBER OF MOLECULAR ORBITALS =     7
+          NUMBER OF   BASIS  FUNCTIONS =     7
+
+
+     ------------------------------------------
+     THE POINT GROUP IS C1 , NAXIS= 1, ORDER= 1
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   =   7
+
+ ..... DONE SETTING UP THE RUN .....
+
+ CPU        TIME:   STEP =      0.04 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.06 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =     65.18%,  TOTAL =     162.94%
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     162.35%
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          SYMDEN=       F
+          TOLZ  = 0.0E+00          TOLE  = 0.0E+00
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+ HUCKEL GUESS REQUIRES      2471 WORDS.
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  7.14144475E-01
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+     5 ORBITALS ARE OCCUPIED (    1 CORE ORBITALS).
+     2=A        3=A        4=A        5=A        6=A        7=A   
+ ...... END OF INITIAL ORBITAL SELECTION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     160.76%
+
+          --------------------
+          2 ELECTRON INTEGRALS
+          --------------------
+
+ THE -PK- OPTION IS OFF, THE INTEGRALS ARE NOT IN SUPERMATRIX FORM.
+ STORING    4998 INTEGRALS/RECORD ON DISK, USING 12 BYTES/INTEGRAL.
+ TWO ELECTRON INTEGRAL EVALUATION REQUIRES   34408 WORDS OF MEMORY.
+ SCHWARZ INEQUALITY OVERHEAD:        28 INTEGRALS, CPU TIME=        0.02
+ II,JST,KST,LST =  1  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  2  1  1  1 NREC =         1 INTLOC =    2
+ II,JST,KST,LST =  3  1  1  1 NREC =         1 INTLOC =   34
+ II,JST,KST,LST =  4  1  1  1 NREC =         1 INTLOC =   84
+ SCHWARZ INEQUALITY TEST SKIPPED         0 INTEGRAL BLOCKS.
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 206
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.02 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =    501.63%,  TOTAL =     181.29%
+
+          -------------------
+          RHF SCF CALCULATION
+          -------------------
+
+     NUCLEAR ENERGY =         8.8870065747
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF STEP=      7938 WORDS.
+
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0   -74.798153923   -74.798153923   0.585814608   0.000000000
+   2  1  0   -74.949987845    -0.151833922   0.180197672   0.000000000
+   3  2  0   -74.962690524    -0.012702679   0.060203036   0.000000000
+   4  3  0   -74.964083457    -0.001392933   0.020782027   0.000000000
+   5  4  0   -74.964285389    -0.000201932   0.007719362   0.000000000
+   6  0  0   -74.964320525    -0.000035136   0.005056645   0.000000000
+   7  1  0   -74.964328781    -0.000008256   0.000126896   0.000000000
+   8  2  0   -74.964328788    -0.000000007   0.000045747   0.000000000
+   9  3  0   -74.964328789    -0.000000001   0.000017697   0.000000000
+  10  4  0   -74.964328790     0.000000000   0.000007222   0.000000000
+  11  5  0   -74.964328790     0.000000000   0.000003052   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.00 SECONDS (       0.00 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS =       0.00 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS      -74.9643287896 AFTER  11 ITERATIONS
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                  -20.2438    -1.2506    -0.6032    -0.4455    -0.3882
+                     A          A          A          A          A   
+    1  O   1  S   0.994203   0.234218   0.000000   0.100458   0.000000
+    2  O   1  S   0.025916  -0.845882   0.000000  -0.521394   0.000000
+    3  O   1  X   0.002403  -0.070441   0.481820   0.465966   0.000000
+    4  O   1  Y   0.003189  -0.093479  -0.363078   0.618358   0.000000
+    5  O   1  Z   0.000000   0.000000   0.000000   0.000000  -1.000000
+    6  H   2  S  -0.005627  -0.156449   0.446377   0.289063   0.000000
+    7  H   3  S  -0.005627  -0.156449  -0.446377   0.289063   0.000000
+
+                      6          7
+                    0.5707     0.7086
+                     A          A   
+    1  O   1  S   0.128351   0.000000
+    2  O   1  S  -0.832526   0.000000
+    3  O   1  X  -0.440905   0.779855
+    4  O   1  Y  -0.585100  -0.587663
+    5  O   1  Z   0.000000   0.000000
+    6  H   2  S   0.775801  -0.808915
+    7  H   3  S   0.775801   0.808916
+ ...... END OF RHF CALCULATION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     168.88%
+
+ Smallest alpha-alpha delta epsilon is:   0.95896248
+
+
+ ----------------   ------------------------------------
+ RHF-MP2 GRADIENT   PROGRAM WRITTEN BY ALEX A. GRANOVSKY
+ ----------------   ------------------------------------
+
+ # CORE ORBITALS     =    1
+ # OCCUPIED ORBITALS =    4
+ # BASIS FUNCTIONS   =    7
+
+ MEMORY REQUIREMENTS FOR MP2 TRANSFORMATION
+  MINIMUM=     10439 WORDS, USING 1 ORBITAL PER PASS
+  MAXIMUM=     11027 WORDS, USING ONLY 1 AO INTEGRAL PASS
+ EACH ADDITIONAL       196 WORDS REDUCES PASS COUNT BY 1.
+
+ MP2 ENERGY/GRADIENT TEI TRANSFORMATION
+ # OF WORDS AVAILABLE      =   20000000
+ # OF WORDS USED           =      11027
+ # OF ORBITALS/PASS        =          4
+ # OF INT. PASSES (AVERAGE)=          1
+ THRESHOLD FOR KEEPING TRANSFORMED 2E- INTEGRALS =  1.000E-09
+
+ PASS #   1 TOOK      0.00 SECONDS.
+
+ RESULTS OF MOLLER-PLESSET 2ND ORDER CORRECTION ARE
+               E(0)=       -74.9643287896
+               E(1)=         0.0
+               E(2)=        -0.0379533066
+             E(MP2)=       -75.0022820962
+
+ DONE WITH -MP2- GRADIENT TEI TRANFORMATION
+          0 NON-ZERO [AI|BJ] INTEGRALS WRITTEN TO FILE  9
+
+ ..... DONE WITH MP2 ENERGY .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     166.17%
+
+     -------------------------------------------------
+     SCF PROPERTIES...FOR THE UNPERTURBED WAVEFUNCTION
+     -------------------------------------------------
+
+
+                         ------------------------------
+                         properties for the RHF density
+                         ------------------------------
+
+          -----------------
+          ENERGY COMPONENTS
+          -----------------
+
+         WAVEFUNCTION NORMALIZATION =       1.0000000000
+
+                ONE ELECTRON ENERGY =    -121.8401708420
+                TWO ELECTRON ENERGY =      37.9888354778
+           NUCLEAR REPULSION ENERGY =       8.8870065747
+                                      ------------------
+                       TOTAL ENERGY =     -74.9643287896
+
+ ELECTRON-ELECTRON POTENTIAL ENERGY =      37.9888354778
+  NUCLEUS-ELECTRON POTENTIAL ENERGY =    -196.3570301648
+   NUCLEUS-NUCLEUS POTENTIAL ENERGY =       8.8870065747
+                                      ------------------
+             TOTAL POTENTIAL ENERGY =    -149.4811881124
+               TOTAL KINETIC ENERGY =      74.5168593228
+                 VIRIAL RATIO (V/T) =       2.0060049427
+
+  ...... PI ENERGY ANALYSIS ......
+
+ ENERGY ANALYSIS:
+            FOCK ENERGY=     -45.8624989854
+          BARE H ENERGY=    -121.8401708420
+     ELECTRONIC ENERGY =     -83.8513349137
+         KINETIC ENERGY=      74.5168593228
+          N-N REPULSION=       8.8870065747
+           TOTAL ENERGY=     -74.9643283390
+        SIGMA PART(1+2)=     -76.0328761945
+               (K,V1,2)=      69.4593968708    -176.4390790838      30.9468060186
+           PI PART(1+2)=      -7.8184587192
+               (K,V1,2)=       5.0574624520     -19.9179510810       7.0420299097
+  SIGMA SKELETON, ERROR=     -67.1458696198       0.0000000000
+             MIXED PART= 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
+ ...... END OF PI ENERGY ANALYSIS ......
+
+          ---------------------------------------
+          MULLIKEN AND LOWDIN POPULATION ANALYSES
+          ---------------------------------------
+
+     MULLIKEN ATOMIC POPULATION IN EACH MOLECULAR ORBITAL
+
+                      1          2          3          4          5
+
+                  2.000000   2.000000   2.000000   2.000000   2.000000
+
+    1             2.001247   1.630155   1.056436   1.651376   2.000000
+    2            -0.000623   0.184922   0.471782   0.174312   0.000000
+    3            -0.000623   0.184923   0.471782   0.174312   0.000000
+
+               ----- POPULATIONS IN EACH AO -----
+                             MULLIKEN      LOWDIN
+              1  O   1  S     1.99775     1.99609
+              2  O   1  S     1.83608     1.69743
+              3  O   1  X     1.19859     1.22003
+              4  O   1  Y     1.30678     1.32430
+              5  O   1  Z     2.00000     2.00000
+              6  H   2  S     0.83039     0.88107
+              7  H   3  S     0.83039     0.88107
+
+          ----- MULLIKEN ATOMIC OVERLAP POPULATIONS -----
+          (OFF-DIAGONAL ELEMENTS NEED TO BE MULTIPLIED BY 2)
+
+             1           2           3
+
+    1    7.8244427
+    2    0.2573860   0.6146364
+    3    0.2573860  -0.0416297   0.6146364
+
+          TOTAL MULLIKEN AND LOWDIN ATOMIC POPULATIONS
+       ATOM         MULL.POP.    CHARGE          LOW.POP.     CHARGE
+    1 O             8.339215   -0.339215         8.237863   -0.237863
+    2 H             0.830393    0.169607         0.881068    0.118932
+    3 H             0.830393    0.169607         0.881068    0.118932
+
+          -------------------------------
+          BOND ORDER AND VALENCE ANALYSIS     BOND ORDER THRESHOLD=0.050
+          -------------------------------
+
+                   BOND                       BOND                       BOND
+  ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER
+    1   2  0.990  0.958        1   3  0.990  0.958
+
+                       TOTAL       BONDED        FREE
+      ATOM            VALENCE     VALENCE     VALENCE
+    1 O                 1.917       1.917       0.000
+    2 H                 0.971       0.971       0.000
+    3 H                 0.971       0.971       0.000
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (BOHR)    CHARGE
+                 0.075831    0.100631    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     1.007145    1.336526    0.000000    1.673512
+ ...... END OF PROPERTY EVALUATION ......
+
+ CPU        TIME:   STEP =      0.02 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =   1390.82%,  TOTAL =     190.08%
+ ......END OF NBO ANALYSIS......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     187.41%
+
+          ---------------------
+          CPHF FOR MP2 GRADIENT
+          ---------------------
+
+ -MP2- LAGRANGIAN     TOOK =      0.000 SECONDS
+
+ ..... SOLVING CPHF IN THE AO BASIS .....
+ ..... INITIATING DIIS PROCEDURE .....
+ MAXIMUM RESPONSE VECTOR ERROR= 8.029710E-04
+ MAXIMUM RESPONSE VECTOR ERROR= 3.420823E-04
+ MAXIMUM RESPONSE VECTOR ERROR= 8.193418E-06
+ MAXIMUM RESPONSE VECTOR ERROR= 1.403539E-06
+ MAXIMUM RESPONSE VECTOR ERROR= 3.310329E-11
+ .....    6 ITERATIONS CARRIED OUT    .....
+
+ -MP2- CPHF EQUATIONS TOOK =      0.000 SECONDS
+ -MP2- W2(OCC,OCC)    TOOK =      0.000 SECONDS
+ ..... DONE WITH MP2 CPHF AND DENSITY .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     184.89%
+
+
+ MP2 NATURAL ORBITAL OCCUPATION NUMBERS ARE
+  2.0000 1.9990 1.9984 1.9878 1.9857 0.0151 0.0141
+ THERE ARE     9.9708 ELECTRONS IN PRINCIPAL NATURAL ORBITALS.
+ THERE ARE     0.0292 ELECTRONS IN SECONDARY NATURAL ORBITALS.
+ MP2 NATURAL ORBITALS HAVE BEEN PUNCHED.
+
+     -------------------------------------------------
+     MP2 PROPERTIES...FOR THE FIRST ORDER WAVEFUNCTION
+     -------------------------------------------------
+
+
+                         ------------------------------
+                         properties for the MP2 density
+                         ------------------------------
+
+          -----------------
+          ENERGY COMPONENTS
+          -----------------
+
+         WAVEFUNCTION NORMALIZATION =       1.0000000000
+
+                ONE ELECTRON ENERGY =    -121.7630270025
+                TWO ELECTRON ENERGY =      37.8737383317
+           NUCLEAR REPULSION ENERGY =       8.8870065747
+                                      ------------------
+                       TOTAL ENERGY =     -75.0022820962
+
+ ELECTRON-ELECTRON POTENTIAL ENERGY =      37.8737383317
+  NUCLEUS-ELECTRON POTENTIAL ENERGY =    -196.3002728663
+   NUCLEUS-NUCLEUS POTENTIAL ENERGY =       8.8870065747
+                                      ------------------
+             TOTAL POTENTIAL ENERGY =    -149.5395279599
+               TOTAL KINETIC ENERGY =      74.5372458637
+                 VIRIAL RATIO (V/T) =       2.0062389779
+
+          ---------------------------------------
+          MULLIKEN AND LOWDIN POPULATION ANALYSES
+          ---------------------------------------
+
+     MULLIKEN ATOMIC POPULATION IN EACH MOLECULAR ORBITAL
+
+                      1          2          3          4          5
+
+                  2.000000   2.000000   2.000000   2.000000   2.000000
+
+    1             2.001247   1.630155   1.056436   1.651376   2.000000
+    2            -0.000623   0.184922   0.471782   0.174312   0.000000
+    3            -0.000623   0.184923   0.471782   0.174312   0.000000
+
+               ----- POPULATIONS IN EACH AO -----
+                             MULLIKEN      LOWDIN
+              1  O   1  S     1.99782     1.99619
+              2  O   1  S     1.84194     1.70460
+              3  O   1  X     1.18917     1.21103
+              4  O   1  Y     1.29199     1.31036
+              5  O   1  Z     1.99898     1.99898
+              6  H   2  S     0.84006     0.88942
+              7  H   3  S     0.84006     0.88942
+
+          ----- MULLIKEN ATOMIC OVERLAP POPULATIONS -----
+          (OFF-DIAGONAL ELEMENTS NEED TO BE MULTIPLIED BY 2)
+
+             1           2           3
+
+    1    7.8363620
+    2    0.2417634   0.6382744
+    3    0.2417634  -0.0399822   0.6382744
+
+          TOTAL MULLIKEN AND LOWDIN ATOMIC POPULATIONS
+       ATOM         MULL.POP.    CHARGE          LOW.POP.     CHARGE
+    1 O             8.319889   -0.319889         8.221155   -0.221155
+    2 H             0.840056    0.159944         0.889422    0.110578
+    3 H             0.840056    0.159944         0.889422    0.110578
+
+          -------------------------------
+          BOND ORDER AND VALENCE ANALYSIS     BOND ORDER THRESHOLD=0.050
+          -------------------------------
+
+                   BOND                       BOND                       BOND
+  ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER
+    1   2  0.990  0.935        1   3  0.990  0.935
+
+                       TOTAL       BONDED        FREE
+      ATOM            VALENCE     VALENCE     VALENCE
+    1 O                 1.929       1.870       0.060
+    2 H                 0.974       0.946       0.028
+    3 H                 0.974       0.946       0.028
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (BOHR)    CHARGE
+                 0.075831    0.100631    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     0.962572    1.277376    0.000000    1.599448
+ ...... END OF PROPERTY EVALUATION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     182.35%
+ ......END OF NBO ANALYSIS......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     181.30%
+
+ AN AIMPAC INPUT FILE IS BEING WRITTEN TO FILE   7
+      396849 WORDS OF    DYNAMIC MEMORY USED
+      113783 BYTES OF    HEAP MEMORY    USED,       97527 BYTES REMAIN IN USE
+ EXECUTION OF FIREFLY TERMINATED NORMALLY 21:49:43 10-AUG-2017    
