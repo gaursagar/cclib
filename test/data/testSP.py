@@ -121,6 +121,7 @@ class GenericSPTest(unittest.TestCase):
 
     @skipForParser('Molpro', '?')
     @skipForParser('ORCA', 'ORCA has no support for symmetry yet')
+    @skipForLogfile('GAMESS/basicFirefly8.2', 'all labels are A for C1 symmetry')
     def testsymlabels(self):
         """Are all the symmetry labels either Ag/u or Bg/u?"""
         sumwronglabels = sum([x not in ['Ag', 'Bu', 'Au', 'Bg'] for x in self.data.mosyms[0]])
