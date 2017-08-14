@@ -603,7 +603,7 @@ class GAMESS(logfileparser.Logfile):
 
             self.skip_line(inputfile, 'dashes')
 
-            while line[:5] != " ITER":
+            while line[:5] != " ITER" and "END OF RHF CALCULATION" not in line:
 
                 self.updateprogress(inputfile, "Attributes")
 
