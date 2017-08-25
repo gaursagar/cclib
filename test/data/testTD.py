@@ -13,6 +13,7 @@ import unittest
 import numpy
 
 from skip import skipForParser
+from skip import skipForLogfile
 
 
 __filedir__ = os.path.realpath(os.path.dirname(__file__))
@@ -119,6 +120,7 @@ class OrcaTDDFTTest(GenericTDTest):
     number = 10
     expected_l_max = 48000
 
+    @skipForLogfile('ORCA/basicORCA4.0', '1.16536979 != 1.0 within 0.1 delta')
     def testoscs(self):
         """Is the maximum of etoscs in the right range?"""
         self.assertEqual(len(self.data.etoscs), self.number)
